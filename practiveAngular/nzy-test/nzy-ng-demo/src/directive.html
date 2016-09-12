@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css"/>
     <link rel="stylesheet" href="../bower_components/angular-material-icons/angular-material-icons.css"/>
 </head>
-<body>
-
+<body ng-app="myApp" ng-controller="myController">
+<my-root-tag ng-repeat="item in items" ng-if="item.price > 0">
+    <my-child-tag ng-model="item"></my-child-tag>
+</my-root-tag>
 </body>
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/angular/angular.js"></script>
@@ -21,14 +23,39 @@
 <script src="../bower_components/angular-material-icons/angular-material-icons.min.js"></script>
 <script src="../bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
 <script>
-    (function () {
-        'use strict';
-        angular
-            .module('MyApp', ['ngMaterial', 'ngMessages', 'ngMdIcons'])
-            .controller('DemoCtrl', ['$scope', function ($scope) {
+    var app = angular.module('myApp', []);
+    app.controller('myController', function ($scope, $sce) {
+        $scope.$sce = $sce;
+        $scope.items = [{
+            name: "枕头1",
+            price: 101,
+            img: "http://www.baidu.com/xxx.png",
+            description: "好枕头1，<span  style='color:red;' onclick='alert(111)'>低价卖</span>, 快来买"
+        }, {
+            name: "枕头1",
+            price: 102,
+            img: "http://www.baidu.com/xxx.png",
+            description: "好枕头1，<span  style='color:red;' onclick='alert(111)'>低价卖</span>, 快来买"
+        }, {
+            name: "枕头1",
+            price: 103,
+            img: "http://www.baidu.com/xxx.png",
+            description: "好枕头1，<span  style='color:red;' onclick='alert(111)'>低价卖</span>, 快来买"
+        }];
+    });
+    app.directive('myRootTag', function () {
+        return {
 
-            }]);
-    })();
+            template: '<div class="itemClass">' +
+                            '<ul>' +
+                                '<li>{{item.name}}</li>' +
+                                '<li>{{item.img}}</li>' +
+                                '<li ng-bind-html="$sce.trustAsHtml(item.description)"></li>' +
+                            '</ul>' +
+                        '</div>',
+            replace: true
+        }
+    })
 
 </script>
 </html>
