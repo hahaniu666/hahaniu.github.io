@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "<> Sans";
+    src: url("path/to/font") format("<format>");
+}
+
+.\31\ \<\ 2\ -\>::before {
+    content: "\3e";
+    font-family: "<> Sans";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    vertical-align: bottom;
+}

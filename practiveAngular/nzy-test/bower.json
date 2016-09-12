@@ -1,0 +1,22 @@
+{
+  "name": "qh-tmp",
+  "authors": [
+    "niuzy <niuzy@kingsilk.net>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-icons-font": "^2.2.3",
+    "angular-bootstrap": "^1.3.3"
+  }
+}
