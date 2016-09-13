@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="expanderModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../bower_components/material-design-icons-font/iconfont/material-icons.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="../bower_components/angular-material-icons/angular-material-icons.css"/>
+
+    <style>
+        .expander {
+            border: 1px solid black;
+            width: 250px;
+        }
+
+        .expander > .title {
+            background-color: black;
+            color: white;
+            padding: .1em .3em;
+            cursor: pointer;
+        }
+
+        .expander > .body {
+            padding: .1em .3em;
+        }
+    </style>
+</head>
+<body ng-controller='SomeController'>
+<accordion>
+    <expander class='expander' ng-repeat='expander in expanders' expander-title='expander.title'>
+        {{expander.text}}
+    </expander>
+</accordion>
+</body>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script src="../bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="../bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
+<script>
+
+    var expModule = angular.module('expanderModule', []);
+    expModule.directive('accordion', function () {
+        return {
+            restrict: 'EA',
+            replace: true,
+            transclude: true,
+            template: '<div ng-transclude></div>',
+            controller: function () {
+                var expanders = [];
+                this.gotOpened = function (selectedExpander) {
+                    angular.forEach(expanders, function (expander) {
+                        if (selectedExpander != expander) {
+                            expander.showMe = false;
+                        }
+                    });
+                };
+                this.addExpander = function (expander) {
+                    expanders.push(expander);
+                }
+            }
+        }
+    });
+
+    expModule.directive('expander', function () {
+        return {
+            restrict: 'EA',
+            replace: true,
+            transclude: true,
+            require: '^?accordion',
+            scope: {
+                title: '=expanderTitle'
+            },
+            template: '<div>'
+            + '<div class="title" ng-click="toggle()">{{title}}</div>'
+            + '<div class="body" ng-show="showMe" ng-transclude></div>'
+            + '</div>',
+            link: function (scope, element, attrs, accordionController) {
+                scope.showMe = false;
+                accordionController.addExpander(scope);
+                scope.toggle = function toggle() {
+                    scope.showMe = !scope.showMe;
+                    accordionController.gotOpened(scope);
+                }
+            }
+        }
+    });
+
+    expModule.controller("SomeController", function ($scope) {
+        $scope.expanders = [{
+            title: 'Click me to expand',
+            text: 'Hi there folks, I am the content that was hidden but is now shown.'
+        }, {
+            title: 'Click this',
+            text: 'I am even better text than you have seen previously'
+        }, {
+            title: 'Test',
+            text: 'test'
+        }];
+    });
+
+</script>
+</html>
+
+
+
+
+
+
+

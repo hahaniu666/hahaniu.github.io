@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="time">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../bower_components/material-design-icons-font/iconfont/material-icons.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="../bower_components/angular-material-icons/angular-material-icons.css"/>
+
+    <style>
+
+    </style>
+</head>
+<body>
+<div ng-controller="Ctrl2">
+    Date format: <input ng-model="format">
+    <hr/>
+    Current time is: <span my-current-time="format"></span>
+</div>
+</body>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script src="../bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="../bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
+<script>
+    var app = angular.module('time', []);
+
+    app.controller('Ctrl2', function ($scope) {
+        function Ctrl2($scope) {
+            $scope.format = 'M/d/yy h:mm:ss a';
+        }
+    });
+
+    // Register the 'myCurrentTime' directive factory method.
+    // We inject $timeout and dateFilter service since the factory method is DI.
+    app.directive('myCurrentTime', function ($timeout, dateFilter) {
+        // return the directive link function. (compile function not needed)
+        return function (scope, element, attrs) {
+            var format,  // date format
+                    timeoutId; // timeoutId, so that we can cancel the time updates
+
+            // used to update the UI
+            function updateTime() {
+                element.text(dateFilter(new Date(), format));
+            }
+
+            // watch the expression, and update the UI on change.
+            scope.$watch(attrs.myCurrentTime, function (value) {
+                format = value;
+                updateTime();
+            });
+
+            // schedule update in one second
+            function updateLater() {
+                // save the timeoutId for canceling
+                timeoutId = $timeout(function () {
+                    updateTime(); // update DOM
+                    updateLater(); // schedule another update
+                }, 1000);
+            }
+
+            // listen on DOM destroy (removal) event, and cancel the next UI update
+            // to prevent updating time ofter the DOM element was removed.
+            element.bind('$destroy', function () {
+                $timeout.cancel(timeoutId);
+            });
+
+            updateLater(); // kick off the UI update process.
+        }
+    });
+</script>
+</html>

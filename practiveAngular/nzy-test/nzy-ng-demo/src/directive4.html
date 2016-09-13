@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <script src="../bower_components/angular/angular.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+
+<body ng-app="myApp" ng-controller="myController">
+<div class="item">
+    <my-root-tag  item="items" >
+        <my-child-tag ng-model="extraItem"></my-child-tag>
+
+        <div>aaaaaaaaaaa</div>
+
+    </my-root-tag>
+
+
+
+</div>
+</body>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myController', function ($scope, $sce) {
+        $scope.$sce = $sce;
+
+        $scope.items = [{
+            name: "枕头1",
+            price: 101,
+            img: "http://www.baidu.com/xxx.png",
+            description: "好枕头1，<span  style='color:red;' onclick='alert(111)'>低价卖</span>, 快来买"
+        }, {
+            name: "枕头1",
+            price: 102,
+            img: "http://www.baidu.com/xxx.png",
+            description: "好枕头2，<span  style='color:red;' onclick='alert(111)'>低价卖</span>, 快来买"
+        }, {
+            name: "枕头1",
+            price: 103,
+            img: "http://www.baidu.com/xxx.png",
+            description: "好枕头3，<span  style='color:red;' onclick='alert(111)'>低价卖</span>, 快来买"
+        }];
+        $scope.extraItem = {
+            name: "枕头x",
+            price: 102,
+            img: "http://www.baidu.com/xxx.pngx",
+            description: "好枕头xxxxx"
+        };
+    });
+    app.directive('myRootTag', function () {
+        return {
+            restrict: 'AE',
+            templateUrl: 'parent.html',
+            scope: {
+                arr: "=item"
+            },
+            replace: true,
+            transclude: true,
+            link: function (scope, element, attrs) {
+                scope.alert = function () {
+                    alert(111)
+                }
+            }
+        }
+    });
+    app.directive('myChildTag', function () {
+        return {
+            require: 'ngModel',
+            scope: {
+                eee: '=ngModel'
+            },
+            templateUrl: 'child.html',
+            link: function (scope, element, attrs) {
+                console.log(scope.eee);
+
+            },
+            controller: function ($scope, $sce) {
+                $scope.trustAsHtml = $sce.trustAsHtml($scope.eee.description);
+
+            }
+        }
+    })
+</script>
+<script type="text/ng-template" id="parent.html">
+
+    <div class="itemClass" >
+        <div ng-transclude >
+            <my-child-tag ng-repeat="a in arr" ng-model="a" >
+            </my-child-tag>
+        </div>
+        <my-child-tag ng-repeat="a in arr" ng-model="a" ng-click="alert()">
+        </my-child-tag>
+    </div>
+
+</script>
+
+<script type="text/ng-template" id="child.html">
+    <ul>
+        <li >{{eee.name}}</li>
+        <li>{{eee.img}}</li>
+        <li ng-bind-html="trustAsHtml"></li>
+    </ul>
+</script>
+</html>
