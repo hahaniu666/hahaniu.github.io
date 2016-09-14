@@ -15,13 +15,12 @@
 
 <body ng-app="myApp" ng-controller="myController">
 <div class="item">
-    <my-root-tag  item="items" >
+    <my-root-tag item="items">
         <my-child-tag ng-model="extraItem"></my-child-tag>
 
         <div>aaaaaaaaaaa</div>
 
     </my-root-tag>
-
 
 
 </div>
@@ -91,20 +90,21 @@
 </script>
 <script type="text/ng-template" id="parent.html">
 
-    <div class="itemClass" >
-        <div ng-transclude >
-            <my-child-tag ng-repeat="a in arr" ng-model="a" >
-            </my-child-tag>
+    <div class="itemClass">
+        <div ng-transclude>
+
         </div>
-        <my-child-tag ng-repeat="a in arr" ng-model="a" ng-click="alert()">
+        <my-child-tag ng-repeat="a in arr" ng-model="a">
         </my-child-tag>
+        <!-- <my-child-tag ng-repeat="a in arr" ng-model="a" ng-click="alert()">
+         </my-child-tag>-->
     </div>
 
 </script>
 
 <script type="text/ng-template" id="child.html">
     <ul>
-        <li >{{eee.name}}</li>
+        <li>{{eee.name}}</li>
         <li>{{eee.img}}</li>
         <li ng-bind-html="trustAsHtml"></li>
     </ul>
