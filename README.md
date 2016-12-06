@@ -1,2 +1,2 @@
 # hahaniu.github.io
-person
+angular2-demo
