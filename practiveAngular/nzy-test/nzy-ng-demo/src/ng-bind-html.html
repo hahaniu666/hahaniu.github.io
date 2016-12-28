@@ -117,7 +117,7 @@
     <br>
     绑定并过滤:
     <p style="background: rebeccapurple"
-       ng-bind-html="myHTML1 | stripClasses | trustHtml "></p>
+       ng-bind-html="myHTML1  | trustHtml "></p>
     <br>
     演示用：
     <div class="need-con" layout="row" layout-align="space-between center">
@@ -157,15 +157,26 @@
 
 <script>
     (function () {
+
+        /* window.validAttrs = angular.extend({},
+         //validAttrs,
+         {xxxx:true});*/
+
+
+        //参考https://docs.angularjs.org/api/ng/service/$sce
+
+
         var app = angular.module('bindHtmlExample', ['ngSanitize', 'ngMaterial']);
 
         app.controller('ExampleController', ['$scope', function ($scope) {
+
             $scope.myHTML =
                     'I am an <code>HTML</code>string with ' +
-                    '<a href="#" class="color layout-align-center-center layout-row" xxxx="aaaaa" layout="row" layout-align="center center">' +
+                    '<a href="#" class="color " xxxx="aaaaa" layout="row" layout-align="center center">' +
                     '<div class="div1">qqq</div><div class="div2">aaaa</div>' +
                     '</a> and other <em>stuff</em>';
 
+            /*如果应用到layout类似标签  layout-align-space-between-center layout-row  写入class 需要*/
             $scope.myHTML1 =
                     '<div class="need-con layout-align-space-between-center layout-row" layout="row" layout-align="space-between center" xx="yyy">' +
                     '<div class="need-left layout-column" layout="column">' +
@@ -176,6 +187,7 @@
                     '<span class="time-dis">退房时间</span>' +
                     '<span class="time">12点之后</span>' +
                     '</div></div>';
+
 
         }]);
         app.filter('trustHtml', function ($sce) {
