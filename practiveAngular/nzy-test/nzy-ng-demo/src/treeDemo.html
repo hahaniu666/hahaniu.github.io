@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../bower_components/material-design-icons-font/iconfont/material-icons.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="../bower_components/angular-material-icons/angular-material-icons.css"/>
+
+    <style>
+        .itemClass:nth-of-type(1) {
+            background: red;
+        }
+
+        .itemClass:nth-of-type(2) {
+            background: blue;
+        }
+
+        .itemClass:nth-of-type(3) {
+            background: slateblue;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+<input class="form-control" type="text" ng-model="search2.query" placeholder="搜索节点的搜索框">
+
+<script type="text/ng-template" id="nodes_renderer2.html">
+    <i class="fa "
+       ng-class="{'fa-minus-square-o':!lastDepartmentChildShow(node), ' fa-plus-square-o':lastDepartmentChildShow(node)}"
+       style="background-color: #fdf9ed;margin-left: 3px; cursor: pointer" ng-click="showDepartmentChild(node)"></i>
+    <a class="jstree-anchor" ng-click="getChildDep(node);">
+        <i class=""
+           ng-class="node.isOrganization=='true'?'jstree-icon jstree-themeicon fa fa-folder icon-state-warning icon-lg jstree-themeicon-custom ':'jstree-icon jstree-themeicon icon-state-danger fa fa-flag icon-lg jstree-themeicon-custom '"></i>
+        <span ng-class="departmentCurrent==node.departmentId?'lxm-treebackground':''">{{node.departmentName}}</span>
+    </a>
+    <ul class="jstree-children" ng-model="node.children" ng-if="node.lovTree">
+        <li class="jstree-node  jstree-leaf" ng-repeat="node in node.children | filter:search2.query"
+            ng-include="'nodes_renderer2.html'">
+
+        </li>
+    </ul>
+</script>
+<div id="tree_2" class="tree-demo jstree jstree-2 jstree-default jstree-checkbox-selection">
+
+    <ul class="jstree-container-ul jstree-children">
+        <li id="j2_1" class="jstree-node  jstree-open" ng-repeat="node in departmentListDate"
+            ng-include="'nodes_renderer2.html'">
+
+        </li>
+    </ul>
+</div>
+
+
+</body>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script src="../bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="../bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myController', function ($scope, $http) {
+        //这段代码意思是如果要搜索树形，先展开树形所有节点
+        $scope.setDepartListShow = function (node) {
+
+            for (var i = 0; i < node.length; i++) {
+                if (node[i].children.length != 0) {
+                    node[i].lovTree = true;
+                    $scope.setDepartListShow(node[i].children)
+                }
+            }
+        };
+//这段代码意思是如果要搜索树形，然后隐藏跟搜索框不匹配的节点，这样2步就达到了 只展示出了跟搜索字段相匹配的结果
+        $scope.setDepartListHide = function (node) {
+
+            for (var i = 0; i < node.length; i++) {
+                if (node[i].children.length != 0) {
+                    node[i].lovTree = false;
+                    $scope.setDepartListHide(node[i].children)
+                }
+            }
+        };
+
+
+        var asdf = {
+            "ret": "SUCCESS",
+            "jsonValue": [
+                {
+                    "departmentName": "某某旅行网",
+                    "children": [
+                        {
+                            "departmentName": "ERM AnonUser",
+                            "organizationId": "0-R9NH",
+                            "organizationName": "某某旅行网",
+                            "children": [],
+                            "departmentId": "0-55RNV",
+                            "isOrganization": "false"
+                        },
+                        {
+                            "departmentName": "Default Department",
+                            "organizationId": "0-R9NH",
+                            "organizationName": "某某旅行网",
+                            "children": [
+                                {
+                                    "departmentName": "111",
+                                    "organizationId": "0-R9NH",
+                                    "organizationName": "某某旅行网",
+                                    "children": [
+                                        {
+                                            "departmentName": "test44",
+                                            "organizationId": "0-R9NH",
+                                            "organizationName": "某某旅行网",
+                                            "children": [
+                                                {
+                                                    "departmentName": "鹅鹅鹅饿饿3",
+                                                    "organizationId": "＊＊＊",
+                                                    "organizationName": "某某旅行网",
+                                                    "children": [],
+                                                    "departmentId": "＊＊＊",
+                                                    "isOrganization": "false"
+                                                }
+                                            ],
+                                            "departmentId": "1-595G0J",
+                                            "isOrganization": "false"
+                                        }
+                                    ],
+                                    "departmentId": "2501",
+                                    "isOrganization": "false"
+                                }
+                            ],
+                            "departmentId": "0-R0NH",
+                            "isOrganization": "false"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        //getDepartListshu 获取树形基本的数据，展示出来
+        var getDepartListshu = function () {
+            $http({
+                method: "get",
+                url: 'https://kingsilk.net/qh/admin/local/16600/api/testZcw/treeJsonhttps://kingsilk.net/qh/admin/local/16600/api/testZcw/treeJson'
+            }).success(function (data) {
+                console.log(data)
+
+                if (data.code == "SUCCESS") {
+                    $scope.departmentListDate = data.jsonValue;
+                    //只展示出来根节点下一级的节点，其他子节点隐藏
+                    for (var i = 0; i < data.jsonValue.length; i++) {
+                        if ($scope.departmentListDate[i].children.length != 0) {
+                            $scope.departmentListDate[i].lovTree = true;
+                            $scope.moveDepartmentListDate[i].lovTree = true
+                        }
+                    }
+                    //监控输入框的变化，如果输入框字段发生变化，然后就执行最开始设计的函数setDepartListShow和setDepartListHide
+                    $scope.$watch('search2.query', function (newValue, oldValue) {
+                        if (newValue != oldValue) {
+                            if (newValue != "") {
+                                $scope.setDepartListShow($scope.departmentListDate)
+                            } else {
+                                $scope.setDepartListHide($scope.departmentListDate)
+                                for (var i = 0; i < data.jsonValue.length; i++) {
+                                    if ($scope.departmentListDate[i].children.length != 0) {
+                                        $scope.departmentListDate[i].lovTree = true
+                                    }
+                                }
+                            }
+
+                        }
+                    })
+                } else {
+                    alert(data.jsonValue)
+                }
+
+            })
+        };
+
+        getDepartListshu();
+        //这是关于树形的点击图标发生相应的变化的代码
+        $scope.lastDepartmentChildShow = function (node) {
+            if (node.children.length != 0) {
+                if (node.lovTree) {
+                    return false
+                } else {
+                    return true
+                }
+            } else {
+                return false
+
+            }
+        };
+        $scope.showDepartmentChild = function (node) {
+
+            if (node.children.length != 0) {
+                node.lovTree = !node.lovTree
+
+            } else {
+                return
+
+            }
+
+        }
+    });
+
+</script>
+</html>

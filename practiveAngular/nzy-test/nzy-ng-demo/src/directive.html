@@ -61,13 +61,542 @@
         return {
             restrict: 'E',
             template: '<div class="itemClass">' +
-                            '<ul>' +
-                                '<li>{{item.name}}</li>' +
-                                '<li>{{item.img}}</li>' +
-                                '<li ng-bind-html="$sce.trustAsHtml(item.description)"></li>' +
-                            '</ul>' +
-                        '</div>',
+            '<ul>' +
+            '<li>{{item.name}}</li>' +
+            '<li>{{item.img}}</li>' +
+            '<li ng-bind-html="$sce.trustAsHtml(item.description)"></li>' +
+            '</ul>' +
+            '</div>',
             replace: true
+        }
+    })
+
+    树型结构
+    app.controller('studyPlanCreatCtrl', function ($scope, $rootScope, $stateParams, studyplanService, $filter, $timeout, $state, $location) {        //页面title设置
+        $rootScope.pagetitle = "创建学习计划";
+        window.y_bridge_bar.set_navbar({param: {title: $rootScope.pagetitle}});
+        $scope.initPageContext = function () {
+            $scope.pageIndex = 1;
+            $scope.pageSize = 10;
+            $scope.totalPages = 0;
+        }
+        $scope.isAllChecked = false;
+        $scope.initPageContext();
+        $scope.creat = {};
+        $scope.blur = {};
+        $scope.blur.studyplanName = false;
+        $scope.blur.studyplanDescription = false;
+        $scope.creat.studyplanName = "";
+        $scope.creat.studyplanday = 1;
+        $scope.creat.userkeyword = "";//搜索人员关键字
+        $scope.creat.studyPlanDescription = "";//学习计划描述        // 单数时间前加0
+        $scope.nodeshowstatus = false;
+        $scope.nodeshowstatus2 = false;
+        $scope.nodeshowstatus3 = false;
+        $scope.userSearchSates = false;
+        $scope.UngroupedCount = 0;//未分组的数量
+        $scope.clickdepid = 0;
+        $scope.isOnlyDepAdmin = false;
+        $scope.waitcomplete = false;
+        var myDateNow = new Date();
+        var iYear = myDateNow.getFullYear();
+        var iMonth = myDateNow.getMonth();
+        var iDay = myDateNow.getDate();
+        $scope.creat.studyplanTime = $filter('dateToString')(myDateNow, "yyyy-MM-dd");
+        $scope.datedayshow = function (data, index) {
+            $timeout(function () {
+                dateTemp = $filter('stringToDate')(data) - myDateNow;
+                $scope.creat.studyplanday = Math.ceil(dateTemp / (24 * 3600 * 1000)) + 1;
+            }, 0);
+        };
+        $scope.clearUserKeyWord = function () {
+            $scope.isSearch = false;
+            $scope.creat.userkeyword = "";
+            $scope.departmentslistshow();
+        };
+        $scope.opt = {};
+        $scope.opt.date = {preset: 'date', minDate: new Date(iYear, iMonth, iDay)};
+        $scope.opt.default = {
+            preset: 'date', //日期
+            theme: 'android-ics light', //皮肤样式
+            display: 'bottom', //显示方式
+            mode: 'mixed', //日期选择模式
+            dateFormat: 'yy-mm-dd', // 日期格式
+            setText: '确定', //确认按钮名称
+            cancelText: '取消',//取消按钮名称
+            dateOrder: 'yymmdd', //面板中日期排列格式
+            dayText: '日', monthText: '月', yearText: '年', //面板中年月日文字
+            startYear: iYear, //开始年份
+            endYear: iYear + 10, //结束年份
+            width: 90, onSelect: $scope.datedayshow
+        };
+        $scope.showDatecontroll = function () {
+            $('input[data-role="datebox"]').mobiscroll($.extend($scope.opt['date'], $scope.opt['default']));
+            $('input[data-role="datebox"]').mobiscroll('show');
+        }
+        $scope.creat.studyplanUser = "";
+        $scope.creat.addUserStatus = 0;        //开始计算计划需要多少天
+        var completeDate = new Date($scope.creat.studyplanTime);
+        $scope.addUserShow = function () {
+            $scope.creat.isdeluser = false;
+            $scope.creat.addUserStatus = 1;
+            $scope.departmentslistshow();
+        }
+        $scope.addUserHid = function () {
+            $scope.creat.addUserStatus = 0;
+        }
+        $scope.directnodeshowstatus = false;
+        $scope.directnodeshowstatus2 = false;
+        $scope.openDeleteUser = function (d) {
+            $scope.creat.isdeluser = true;//是否可以删除
+            d.stopPropagation();
+        }
+        $scope.bodyclick = function () {
+            $scope.creat.isdeluser = false;
+        }
+        $scope.deleChooseUser = function (id, obj) {
+            obj.stopPropagation();
+            if ($scope.creat.isdeluser) {
+                angular.forEach($scope.userchoosedlist, function (d, index) {
+                    if (d.userid == id) {
+                        $scope.userchoosedlist.splice(index, 1);
+                    }
+                });
+            }
+        }        //一级选择节点事件
+        $scope.selectNode = function (item, flag, ischecked) {
+            if (item == 0) {//是未分组的情况处理
+                if ($scope.selectpid != 0) {
+                    $scope.nodeshowstatus = true;
+                    $scope.selectpid = 0;
+                } else {
+                    $scope.nodeshowstatus = !$scope.nodeshowstatus;
+                }
+                if (flag && $scope.nodeshowstatus) {
+                    $scope.initPageContext();
+                    $scope.creat.userlist = "";
+                    $scope.showUserlist(0, ischecked);
+                }
+            } else {
+                if ($scope.selectpid != item.detail.pid) {
+                    $scope.nodeshowstatus = true;
+                    $scope.selectpid = item.detail.pid;
+                } else {
+                    $scope.nodeshowstatus = !$scope.nodeshowstatus;
+                }
+                if (flag && $scope.nodeshowstatus) {
+                    $scope.initPageContext();
+                    $scope.creat.userlist = new Array();
+                    $scope.showUserlist(item.detail.isdirect == 1 ? item.detail.dpid : item.detail.pid, ischecked);
+                }
+            }
+        }        //二级选择节点事件
+        $scope.selectNode2 = function (item2, flag, ischecked) {
+            if ($scope.selectpid2 != item2.detail.pid) {
+                $scope.nodeshowstatus2 = true;
+                $scope.selectpid2 = item2.detail.pid;
+            } else {
+                $scope.nodeshowstatus2 = !$scope.nodeshowstatus2;
+            }
+            if (flag && $scope.nodeshowstatus2) {
+                $scope.initPageContext();
+                $scope.creat.userlist = "";
+                $scope.showUserlist(item2.detail.isdirect == 1 ? item2.detail.dpid : item2.detail.pid, ischecked);
+            }
+        }        //三级选择节点事件
+        $scope.selectNode3 = function (item3, flag, ischecked) {
+            if ($scope.selectpid3 != item3.detail.pid) {
+                $scope.nodeshowstatus3 = true;
+                $scope.selectpid3 = item3.detail.pid;
+            } else {
+                $scope.nodeshowstatus3 = !$scope.nodeshowstatus3;
+            }
+            if (flag && $scope.nodeshowstatus3) {
+                $scope.initPageContext();
+                $scope.creat.userlist = "";
+                $scope.showUserlist(item3.detail.isdirect == 1 ? item3.detail.dpid : item3.detail.pid, ischecked);
+            }
+        }        //部门展示显示
+        $scope.departmentslistshow = function () {
+            if ($scope.nodeshowstatus == false && $scope.nodeshowstatus2 == false && $scope.nodeshowstatus3 == false) {
+                $scope.showUserlist(0);//先获得未分组数量
+            } else {
+                $scope.showUserlist($scope.clickdepid, false);//先获得展现组数量
+            }
+            var searchData = new Array();
+            if ($rootScope)
+                if ($rootScope.userContent != undefined && ($rootScope.userContent.roleID != "100004" || $rootScope.userContent.roleID == "100002")) {
+                    $scope.isAdmin = true;
+                    searchData.managerid = $rootScope.userContent.userId;
+                    $scope.isOnlyDepAdmin = true;
+                }
+            ? managerid = {1}            studyplanService.getOrgDepartments(searchData, function (data) {
+                $scope.departmentslist = data.datas;
+                $scope.userTotalNumber = data.headCount;
+                var tempArray = new Array();                //增加直属部门
+                angular.forEach(data.datas, function (d) {
+                    d.checked = false;//增加是否选中
+                    d.disabled = false;
+                    if ($filter("filter")($scope.userchoosedlist, {userid: d.detail.pid})[0]) {
+                        d.checked = true;
+                        d.disabled = true;
+                    }
+                    if (d.subDepartments != null && d.subDepartments.length > 0) {
+                        angular.forEach(d.subDepartments, function (item) {
+                            item.checked = false;
+                            item.disabled = false;                            //显示时是否为选中状态
+                            if (d.checked == true || $filter("filter")($scope.userchoosedlist, {userid: item.detail.pid})[0]) {
+                                item.checked = true;
+                                item.disabled = true;
+                            }
+                            item.isdirect = 0;
+                            if (item.subDepartments != null && item.subDepartments.length > 0) {
+                                angular.forEach(item.subDepartments, function (item2) {
+                                    item2.isdirect = 0;
+                                    item2.checked = false;
+                                    item2.disabled = false;
+                                    if (item2.subDepartments != null && item2.subDepartments.length > 0) {
+                                        angular.forEach(item2.subDepartments, function (item3) {
+                                            item3.isdirect = 0;
+                                            item3.checked = false;
+                                            item3.disabled = false;
+                                            if (item2.checked == true || $filter("filter")($scope.userchoosedlist, {userid: item3.detail.pid})[0]) {
+                                                item3.checked = true;
+                                                item3.disabled = true;
+                                            }
+                                        });
+                                    }
+                                    if (item2.detail.directCount > 0 && item2.subDepartments != null && item2.subDepartments.length > 0) {
+                                        item2.subDepartments.splice(0, 0, {
+                                            'checked': item2.checked,
+                                            'disabled': item2.checked,
+                                            'detail': {
+                                                'pid': item.detail.pid + '01',
+                                                'departmentName': '直属',
+                                                'userCount': item.detail.directCount,
+                                                'isdirect': 1,
+                                                'dpid': item.detail.pid
+                                            },
+                                            'subDepartments': []
+                                        });
+                                    }
+                                });
+                            }
+                            if (item.detail.directCount > 0 && item.subDepartments != null && item.subDepartments.length > 0) {
+                                item.subDepartments.splice(0, 0, {
+                                    'checked': item.checked,
+                                    'disabled': item.checked,
+                                    'detail': {
+                                        'pid': item.detail.pid + '01',
+                                        'departmentName': '直属',
+                                        'userCount': item.detail.directCount,
+                                        'isdirect': 1,
+                                        'dpid': item.detail.pid
+                                    },
+                                    'subDepartments': []
+                                });
+                            }
+                        });
+                    }
+                    if (d.detail.directCount > 0 && d.subDepartments != null && d.subDepartments.length > 0) {
+                        d.subDepartments.splice(0, 0, {
+                            'checked': d.checked,
+                            'disabled': d.checked,
+                            'detail': {
+                                'pid': d.detail.pid + '01',
+                                'departmentName': '直属',
+                                'userCount': d.detail.directCount,
+                                'isdirect': 1,
+                                'dpid': d.detail.pid
+                            },
+                            'subDepartments': []
+                        });
+                    }
+                });
+            });
+        }        //选择单个人员
+        $scope.userchoosedlist = new Array();
+        $scope.choosesigleuser = function (user, itemcheckbox) {
+            if ($(itemcheckbox.target).prop('checked')) {
+                if (!$filter("filter")($scope.userchoosedlist, {userid: user.pid})[0]) {
+                    $scope.userchoosedlist.push({
+                        'userid': user.pid,
+                        'username': user.fullName,
+                        'userimg': user.imageUrl,
+                        'cate': 2
+                    });
+                }
+            } else {
+                angular.forEach($scope.userchoosedlist, function (d, index) {
+                    if (d.userid == user.pid) {
+                        $scope.userchoosedlist.splice(index, 1);
+                    }
+                });
+            }
+        }        //选择部门
+        $scope.choosedep = function (depitem, obj) {
+            if ($(obj.target).prop('checked')) {
+                if (depitem == 0) {
+                    $scope.isAllChecked = true;
+                    $scope.userchoosedlist = new Array();
+                    $scope.userchoosedlist.push({'userid': 0, 'username': '全部', 'userimg': '', 'cate': 1});
+                } else {                    //对下级部门也选中
+                    $scope.checkedDep(depitem);                    //对部门内部人员也选中
+                    if ($scope.clickdepid == depitem.detail.pid || $scope.isInDep(depitem)) {
+                        angular.forEach($scope.creat.userlist, function (d) {
+                            d.checked = true;
+                            d.disabled = true;
+                        });
+                    }
+                    if (depitem.detail.userCount <= 0) {
+                        $(obj.target).prop('checked', false);
+                    } else {
+                        if (!$filter("filter")($scope.userchoosedlist, {userid: depitem.detail.pid})[0]) {
+                            $scope.userchoosedlist.push({
+                                'userid': depitem.detail.pid,
+                                'username': depitem.detail.departmentName,
+                                'userimg': '',
+                                'cate': 1
+                            });
+                        }
+                    }
+                }                //取消选中
+            } else {
+                if (depitem == 0) {
+                    $scope.isAllChecked = false;
+                }
+                if ($scope.userchoosedlist != null && $scope.userchoosedlist.length > 0) {
+                    angular.forEach($scope.userchoosedlist, function (d, index) {
+                        if (depitem == 0) {
+                            if (d.userid == 0) {
+                                $scope.userchoosedlist.splice(index, 1);
+                            }
+                        } else {
+                            if (d.userid == depitem.detail.pid) {
+                                $scope.userchoosedlist.splice(index, 1);
+                            }
+                        }
+                    });
+                }
+                var isclickid = false;                //对下级部门取消选中
+                if (depitem != null && depitem.subDepartments != null) {
+                    angular.forEach(depitem.subDepartments, function (d) {
+                        d.checked = false;
+                        d.disabled = false;                        //回归上一个选中状态
+                        angular.forEach($scope.userchoosedlist, function (depitem) {
+                            if (depitem.userid == d.detail.pid) {
+                                d.checked = true;
+                                if ($scope.clickdepid == d.detail.pid) {
+                                    isclickid = true;
+                                }
+                            }
+                        });
+                        if (d != null && d.subDepartments != null) {
+                            angular.forEach(d.subDepartments, function (d2) {
+                                d2.checked = false;
+                                d2.disabled = false;                                //回归上一个选中状态
+                                angular.forEach($scope.userchoosedlist, function (depitem2) {
+                                    if (depitem2.userid == d2.detail.pid) {
+                                        d2.checked = true;
+                                        if ($scope.clickdepid == d2.detail.pid) {
+                                            isclickid = true;
+                                        }
+                                    }
+                                });                                //回归上一个状态
+                                if (d.checked == true) {
+                                    d2.disabled = true;
+                                }
+                            });
+                        }
+                    });
+                }                //对部门内部人员取消选中
+                if ($scope.clickdepid == depitem.detail.pid || $scope.isInDep(depitem)) {
+                    angular.forEach($scope.creat.userlist, function (d) {                        //人员列表的部门是选中状态
+                        if (isclickid) {
+                            d.checked = true;
+                            d.disabled = true;
+                        } else {
+                            d.checked = false;
+                            d.disabled = false;
+                            回归上一个选中状态
+                            angular.forEach($scope.userchoosedlist, function (useritem) {
+                                if (useritem.userid == d.pid) {
+                                    d.checked = true;
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+        }        //对子部门选中
+        $scope.checkedDep = function (depitem) {
+            if (depitem != null && depitem.subDepartments != null) {
+                angular.forEach(depitem.subDepartments, function (d) {
+                    d.checked = true;
+                    d.disabled = true;
+                    if (d != null && d.subDepartments != null) {
+                        angular.forEach(d.subDepartments, function (d2) {
+                            d2.checked = true;
+                            d2.disabled = true;
+                        });
+                    }
+                });
+            }
+        }        //判断$scope.clickdepid在部门或者子部门里
+        $scope.isInDep = function (depobj) {
+            if (depobj != null && depobj != undefined) {
+                if (depobj.detail != null && depobj.detail != undefined) {
+                    if (depobj.detail.pid == $scope.clickdepid) {
+                        return true;
+                    }
+                    if (depobj.subDepartments != null && depobj.subDepartments != undefined) {
+                        var substatus = false;
+                        angular.forEach(depobj.subDepartments, function (item) {
+                            substatus = $scope.isInDep(item);
+                        });
+                        return substatus;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+        $scope.excWhere = function () {
+            var searchData = PagingCriteria($scope.pageIndex, $scope.pageSize);
+            if (!angular.isNullOrEmpty($scope.searchKey)) {
+                searchData.searchKey = $scope.searchKey;
+            }
+            var searchData = PagingCriteria($scope.pageIndex, $scope.pageSize);
+            searchData.includesubdepartment = false;
+            searchData.searchkey = $scope.creat.userkeyword;
+            if (searchData.searchkey != '') {
+                searchData.includesubdepartment = true;
+            }
+            searchData.filterOutStudyPlanId = "";
+            searchData.managerid = "";
+            searchData.showDisableUser = 0;
+            return searchData;
+        };        //获得人员列表
+        $scope.showUserlist = function (depid, ischecked) {
+            var searchData = $scope.excWhere();
+            if (!$scope.isSearch) {
+                $scope.clickdepid = depid;
+            }
+            if (ischecked == undefined) {
+                ischecked == false;
+            }
+            if (depid == undefined) {
+                depid = 0;
+            }
+            $scope.isLoadMore = true;
+            studyplanService.getdepartmentUsers(depid, searchData, function (data) {                //如果已经在选中的部门里有则为选中状态
+                if ($filter("filter")($scope.userchoosedlist, {userid: depid})[0]) {
+                    ischecked = true;
+                }
+                angular.forEach($scope.userchoosedlist, function (item, index) {
+                    if (item != null && item != undefined && item.userid == depid) {
+                        ischecked = true;
+                    }
+                });
+                $scope.isLoadMore = true;
+                $scope.creat.userlist = data.datas;
+                angular.forEach($scope.creat.userlist, function (d) {
+                    d.checked = ischecked;
+                    d.disabled = ischecked;
+                    if ($filter("filter")($scope.userchoosedlist, {userid: d.pid})[0]) {
+                        d.checked = true;
+                        d.disabled = true;
+                    }
+                });
+                $scope.totalPages = data.paging.pages;
+                if (depid == 0 && angular.isNullOrEmpty($scope.creat.userkeyword)) {
+                    $scope.UngroupedCount = data.paging.count;
+                }
+                $scope.isLoadMore = false;
+            }, function () {
+                $scope.isLoadMore = false;
+            });
+        }
+        $scope.usermorelist = function (callBack) {
+            if (!$scope.isLoadMore && $scope.totalPages > $scope.pageIndex) {
+                $scope.isLoadMore = true;
+                $scope.pageIndex++;
+                var searchData = $scope.excWhere();
+                studyplanService.getdepartmentUsers(($scope.isSearch ? "0" : $scope.clickdepid), searchData, function (data) {
+                    angular.forEach(data.datas, function (d) {
+                        $scope.creat.userlist.push(d);
+                    });
+                    $scope.totalPages = data.paging.pages;
+                    $scope.isLoadMore = false;
+                }, function () {
+                    $scope.isLoadMore = false;
+                });
+            }
+        };
+        $scope.searchUser = function () {
+            $scope.pageIndex = 1;
+            $scope.totalPages = 1;
+            $scope.creat.userlist = [];
+            $scope.isSearch = true;
+            $scope.showUserlist();
+        };        //选知识相关
+        $scope.selectKng = false;
+        $scope.toSelectKng = function () {
+            $scope.selectKng = true;
+        };
+        $scope.toSelectUser = function () {
+            $scope.selectKng = false;
+        }
+        $scope.selectKngs = []; //选择的知识
+        $scope.$on('updateSelectKngs', function (d, data) {
+            $scope.selectKngs = data;
+        });
+        $scope.completeStudyPlan = function () {
+            $scope.waitcomplete = true;
+            var userdeplist = "";
+            var studyPlanContents = new Array();
+            var studyPlanEndTime = $scope.creat.studyplanTime + " 23:59:59";
+            var domain = "http://www.yxt.com";
+            domain = domain.substring(0, domain.lastIndexOf('#'));
+            var emailUrl = domain + '/study/userplandetail';
+            angular.forEach($scope.userchoosedlist, function (item) {
+                if (item.userid == 0) {
+                    userdeplist += "all|" + localStorage.orgId + ";";
+                } else {
+                    if (item.cate == 1) {
+                        userdeplist += "department|" + item.userid + ";";
+                    }
+                    if (item.cate == 2) {
+                        userdeplist += "person|" + item.userid + ";";
+                    }
+                }
+            });
+            angular.forEach($scope.selectKngs, function (item) {
+                studyPlanContents.push(item.id);
+            });
+            studyplanService.createStudyPlan({
+                "planName": $scope.creat.studyplanName,
+                "description": $scope.creat.studyPlanDescription,
+                "endDate": studyPlanEndTime,
+                "executorIDs": userdeplist,
+                "status": 0,
+                "studyPlanContents": studyPlanContents,
+                "webUrl": domain,
+                "studyPlanUrl": emailUrl
+            }, function (data) {
+                Notify.success('学习计划发布成功！', window.location.href = $state.href('org.studyplan'));
+                $scope.waitcomplete = false;
+            }, function (data) {
+                Notify.warning('学习计划发布失败！');
+                $scope.waitcomplete = false;
+            })            //学习计划查询
+            logService.sendBehaviorLog("add_studyplan", {"id": localStorage.userId});
+        }        //搜索时去掉确定框显示隐藏
+        $scope.isUserSearchStates = function () {
+            $scope.userSearchSates = true;
+        }
+        $scope.noUserSearchStates = function () {
+            $scope.userSearchSates = false;
         }
     })
 

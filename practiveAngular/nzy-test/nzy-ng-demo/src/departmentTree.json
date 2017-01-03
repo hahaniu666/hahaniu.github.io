@@ -1,0 +1,56 @@
+/**
+ * Created by lxm on 15/4/28.
+ */
+{
+  "ret": "SUCCESS",
+  "jsonValue": [
+    {
+      "departmentName": "某某旅行网",
+      "children": [
+        {
+          "departmentName": "ERM AnonUser",
+          "organizationId": "0-R9NH",
+          "organizationName": "某某旅行网",
+          "children": [],
+          "departmentId": "0-55RNV",
+          "isOrganization": "false"
+        },
+        {
+          "departmentName": "Default Department",
+          "organizationId": "0-R9NH",
+          "organizationName": "某某旅行网",
+          "children": [
+            {
+              "departmentName": "111",
+              "organizationId": "0-R9NH",
+              "organizationName": "某某旅行网",
+              "children": [
+                {
+                  "departmentName": "test44",
+                  "organizationId": "0-R9NH",
+                  "organizationName": "某某旅行网",
+                  "children": [
+                    {
+                      "departmentName": "鹅鹅鹅饿饿3",
+                      "organizationId": "＊＊＊",
+                      "organizationName": "某某旅行网",
+                      "children": [],
+                      "departmentId": "＊＊＊",
+                      "isOrganization": "false"
+                    }
+                  ],
+                  "departmentId": "1-595G0J",
+                  "isOrganization": "false"
+                }
+              ],
+              "departmentId": "2501",
+              "isOrganization": "false"
+            }
+          ],
+          "departmentId": "0-R0NH",
+          "isOrganization": "false"
+        }
+      ]
+    }
+  ]
+}
