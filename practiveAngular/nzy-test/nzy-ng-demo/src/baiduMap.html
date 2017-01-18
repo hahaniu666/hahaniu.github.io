@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../bower_components/material-design-icons-font/iconfont/material-icons.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="../bower_components/angular-material-icons/angular-material-icons.css"/>
+
+    <style>
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+<div id="allmap" style="width: 500px;height: 500px;background: red;margin: 0 auto"></div>
+</body>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script src="../bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="../bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
+<script>
+    (function () {
+
+        var app = angular.module('myApp', []);
+        app.controller('myController', function ($scope) {
+
+            $scope.baiduMapWrap = function () {
+                /* //
+                 var script = document.createElement("script");
+                 script.type = "text/javascript";
+                 script.src = "http://api.map.baidu.com/api?v=2.0&ak=wUVG7ygi1AVf7h2tR4SmOKWop3mrGsa5&callback=init";
+                 //document.body.first().insertBefore(script);
+                 //document.getElementsByTagName('script')[0].insertBefore(script,script);
+                 //document.getElementsByTagName('body')[0].appendChild(script);
+
+                 var first = document.body.firstChild;//得到页面的第一个元素
+                 document.body.insertBefore(script, first);//在得到的第一个元素之前插入*/
+
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = "http://api.map.baidu.com/api?v=2.0&ak=wUVG7ygi1AVf7h2tR4SmOKWop3mrGsa5&callback=init";
+                document.body.appendChild(script);
+            };
+            window.init = function () {
+                console.log(11);
+                var map = new BMap.Map("allmap");            // 创建Map实例
+                var point = new BMap.Point(116.404, 39.915); // 创建点坐标
+                map.centerAndZoom(point, 15);
+                map.enableScrollWheelZoom();                 //启用滚轮放大缩小
+                console.log(map);
+            };
+            $scope.baiduMapWrap();
+
+        });
+
+
+    })();
+
+</script>
+</html>

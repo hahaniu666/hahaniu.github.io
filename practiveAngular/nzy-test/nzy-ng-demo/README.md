@@ -22,3 +22,9 @@ bower install --save angular-bootstrap
 bower install --save material-design-icons-font 
 
 ```
+
+
+#新增百度地图api
+---baiduMap.html 和 baiduMap1.html
+ 百度map应用了angular.js
+
