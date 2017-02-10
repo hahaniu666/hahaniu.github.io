@@ -23,14 +23,17 @@
     </style>
 </head>
 <body ng-app="myApp" ng-controller="myController">
-    <div id="editor">some text</div>
-    <div style="width: 500px;height: 500px;border: 1px solid #e0e0e0">
-        <ol>
-            <li>{{aaa}}</li>
-            <li>{{line}}</li>
-            <li></li>
-        </ol>
-    </div>
+<div id="editor">some text</div>
+<input type="button" ng-click="click0()" value="aaaaa" style="background: red;padding: 10px">
+<input type="button" ng-click="click1()" value="bbbb" style="background: red;padding: 10px">
+<div style="width: 500px;height: 500px;border: 1px solid #e0e0e0">
+    <ol>
+        <li>{{aaa}}</li>
+        <li><input type="text" ng-model="aaa" ng-change="cccccc"></li>
+        <li>{{line}}</li>
+        <li></li>
+    </ol>
+</div>
 </body>
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../bower_components/angular/angular.js"></script>
@@ -48,6 +51,21 @@
     var app = angular.module('myApp', []);
     app.controller('myController', ['$scope', function ($scope) {
         var vm = this;
+        vm.aaa = '111';
+        $scope.click0 = function () {
+            console.log(vm.aaa);
+        };
+        $scope.click1 = function (value) {
+            if (!value) {
+                value = vm.aaa;
+            }
+            console.log(value);
+            $scope.aaa = value;
+        };
+
+        $scope.cccccc = function () {
+            //$scope.aaa = $scope.aaa1;
+        };
         //引入
         var editor = ace.edit("editor");
 
@@ -58,8 +76,8 @@
         //editor.getSession().setMode("ace/mode/html");
 
         //设置，获取内容
-        editor.setValue("tsdfsdfsde"); // or session.setValue
-        editor.getValue(); // or session.getValue
+        //editor.setValue("tsdfsdfsde"); // or session.setValue
+        //editor.getValue(); // or session.getValue
 
 
         //获取选择内容:
@@ -116,11 +134,10 @@
         editor.getSession().on('change', function (e) {
             // e.type, et
             // c
-            alert()
-            vm.aaa ='1sdfs';
-            console.log(new Date() + vm.aaa)
-
-            console.log(vm.aaa);
+            //alert()
+            //console.log(vm.aaa);
+            vm.aaa = editor.getValue();
+            $scope.click1(vm.aaa);
         });
 
         //监听选择事件:
