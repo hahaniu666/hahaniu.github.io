@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise test</title>
+    <script>
+
+        /*
+         * task 2
+         * 参考: http://git.oschina.net/btpka3/btpka3/wikis/task
+         */
+
+        /**
+         * 0. 打印系统时间（开始时间）。
+         *
+         * 1. 针对参数（比如 `[1,2,3]` ）中的每一个数值 "并发" 执行进行以下操作（假设当前数值为n）：
+         *    1.1 先暂停n秒。
+         *    1.2 计算 n^2 + 1
+         *    1.3 控制台输出 当前系统时间，以及1.2步计算结果。
+         *
+         * 2. 对上述计算结果进行求和（假设为S），并打印到控制台。
+         *    比如： (1^2+1) + (2^2+1) + (3^2+1) = 2 + 5 + 10 = 17。则控制台输出 17。
+         *
+         * 3. 打印系统时间（结束时间），并打印总耗时（结束时间-开始时间）。
+         *    总耗时（秒）应当在数组中最大值左右（3秒左右）。
+         *
+         * @param intArr 自然数数组。
+         */
+
+
+
+        function myTask1(intArr) {
+            var startTime = new Date();
+            console.log(`myTask1 : ${startTime} : start`);
+
+            Promise.all(intArr.map(fn))
+                    .then((resultArr) => {
+                return resultArr.reduce((pre, cur) => {
+                    return pre + cur;
+        }, 0)
+        })
+        .then((sum)=> {
+                var endTime = new Date();
+            console.log(`myTask1 : ${endTime} : end. sum = ${sum}, ${(endTime - startTime) / 1000.0} second(s)`);
+        });
+        }
+
+        /**
+         * 基本同task1，但是要求针参数中的每一个数值 "顺序" 执行。因此总执行时间应当约为参数数组的 SUM 和（秒）。
+         */
+        function myTask2(intArr) {
+            var startTime = new Date();
+            console.log(`myTask2 : ${startTime} : start`);
+
+            // reduce 方法同时提供前后两个处理的结果,为串联处理提供便利。
+            intArr.reduce((prePromise, curVal, curIndex) => {
+                return prePromise.then((preSum)=> {
+                    return fn(curVal, curIndex).then((curResult)=> {
+                        return preSum + curResult;
+        });
+        })
+
+        }, Promise.resolve(0))
+
+        .then((sum)=> {
+                var endTime = new Date();
+            console.log(`myTask2 : ${endTime} : end. sum = ${sum}, ${(endTime - startTime) / 1000.0} second(s)`);
+        });
+        }
+
+        //myTask1([3,1,2]);
+        //myTask2([3,1,2]);
+        /**
+         * 步骤1中的处理内容。
+         *
+         * @param num 数组中第 i 位上的自然数
+         * @param i   数组下标。在该方法中无有效作用,仅仅用来打印日志。
+         *
+         * @return 一个Promise, 解决的数值是计算结果。
+         */
+        function fn(num, i) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                var result = Math.pow(num, 2) + 1;
+                console.log(`fn      : ${new Date()} : fn(intArr[${i}]) = fn(${num}) = ${result}`);
+                resolve(result);
+            }, num * 1000)
+        });
+        }
+
+
+
+
+        //参考https://msdn.microsoft.com/zh-cn/library/ff679976(v=vs.94).aspx
+        //map可以传3个参数，第一个为数组，第二个为回调函数，第三个参数callbackfn 函数中的 this 关键字可引用的对象。如果省略 thisArg，则 										          undefined 将用作 this 值。为可选参数
+        //对数组的每个元素调用定义的回调函数并返回包含结果的数组。
+        //
+
+        //测试map
+        function arrMap1(arr){
+            var aa = arr.map(arrMap)
+            console.log(aa);
+        };
+        function arrMap(val,i,arr){
+            console.log(`${val},${i}`);
+            return value;
+        };
+        //arrMap1([3,1,2])
+        //arrMap1([2,1,3])
+        //可分别打印3 ，2
+
+
+
+        //测试reduce
+        //参考https://msdn.microsoft.com/zh-cn/library/ff679975(v=vs.94).aspx
+        //对数组中的所有元素调用指定的回调函数。该回调函数的返回值为累积结果，并且此返回值在下一次调用该回调函数时作为参数提供。
+        //reduce传三个参数，第一个为数组对象，第二个为回调函数(可以有四个参数)，第三个为可选，用作初始值
+        //callbackFn(preV,curV,curIndex,arr)
+
+        function arrRed1(arr){
+            var aa = arr.reduce(arrayRed,0);
+            console.log(aa);
+        };
+        function arrayRed(pre,cur,index,arr){
+            console.log(`${pre},${cur}`);
+            return cur + pre;
+        };
+        arrRed1([3,1,2])
+        //打印0,3,   3，1 4,2    6
+
+
+
+        var p = new Promise((resolve, reject) => {
+                    resolve( new Promise((resolve, reject) => {
+                        resolve(1);
+        }));
+        });
+
+        console.log("=======================33==");
+        p.then ((data)=>{
+            console.log("=========================",data);
+        }, (err)=>{
+            console.log("==================err=======",err);
+        })
+    </script>
+
+</head>
+<body>
+please open console, then type `myTask1([3,1,2]);` and `myTask2([3,1,2]);` for testing.~
+</body>
+</html>

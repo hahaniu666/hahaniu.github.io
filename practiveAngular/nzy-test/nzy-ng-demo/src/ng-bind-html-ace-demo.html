@@ -35,8 +35,10 @@
 </head>
 <body layout flex="">
 <div id="editor">some text</div>
-<input type="button" ng-click="click0()" value="aaaaa" style="background: red;padding: 10px">
-<input type="button" ng-click="click1()" value="bbbb" style="background: red;padding: 10px">
+
+
+<input type="button" ng-click="click1()" value="load template" style="background: red;padding: 10px">
+
 <div style="width: 500px;height: 500px;border: 1px solid #e0e0e0">
     <ol>
         <li>{{aaa}}</li>
@@ -45,6 +47,7 @@
         <li></li>
     </ol>
 </div>
+
 <index-tpl-div tpl-url="tplUrl" flex a="clack()" b="aaa()">
 
 </index-tpl-div>
@@ -82,7 +85,8 @@
          </div>
          </div>`;
 
-        var tplUrl = "http://localhost:63342/kingsilk/hahaniu.github.io/practiveAngular/nzy-test/nzy-ng-demo/src/aaa.html";
+        //var tplUrl = "http://localhost:63342/kingsilk/hahaniu.github.io/practiveAngular/nzy-test/nzy-ng-demo/src/aaa.html";
+        var tplUrl = "http://localhost:63342/kingsilk/hahaniu.github.io/practiveAngular/nzy-test/nzy-ng-demo/src/ng-bind-html-ace-demo-tpl.html"
         // https://docs.angularjs.org/api/ng/directive/ngBindHtml
         // http://stackoverflow.com/questions/21503588/angularjs-bind-html-string-with-custom-style\
         // https://github.com/angular/angular.js/issues/5900
@@ -92,7 +96,8 @@
                     //$sceDelegateProvider.resourceUrlWhitelist(['self', '**']);
                 })
                 .run(function ($templateCache) {
-                    $templateCache.put(tplUrl, tpl);
+                    $templateCache.put("/aaa", tpl);
+                    //$templateCache.put(tplUrl, tpl);
                 })
                 // 通过自定义指令来绑定远程模板
                 .directive("indexTplDiv", function ($compile, $templateCache) {
@@ -113,8 +118,8 @@
                         //templateUrl: this.scope
                     };
                 })
-                .controller('DemoCtrl', ['$scope', '$sce', '$templateCache', function ($scope, $sce, $templateCache) {
-                    $scope.html = tpl;
+                .controller('DemoCtrl', ['$scope', '$sce', '$templateCache','$rootScope', function ($scope, $sce, $templateCache,$rootScope) {
+                    $rootScope.html = tpl;
                     $scope.tplUrl = tplUrl;
 
                     $scope.template11 = $templateCache;
@@ -146,8 +151,8 @@
                         }
                         console.log(value);
                         $scope.aaa = value;
-                        $scope.html = value;
-                        $scope.html = $templateCache.get(tplUrl, 'value')
+                        $rootScope.html = value;
+                        $rootScope.html = $templateCache.get(tplUrl, 'value')
                         $templateCache.put(tplUrl, 'value');
                         test(value);
                     };

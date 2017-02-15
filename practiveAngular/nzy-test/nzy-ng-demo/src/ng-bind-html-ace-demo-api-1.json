@@ -1,0 +1,6 @@
+{
+  "code": "SUCCESS",
+  "indexTpl" : "<div class='d' style='z-index:1; position: relative; font-size:20px;' onclick='alert(1)' data-x='x'>111  : {{1+2}}<my-tag>ttt</my-tag></div><div class='index-c' ng-click='alert2()' ><div class='layout-column'><img ng-click='a()' class='flex' src='http://placehold.it/350x150'></div></div>"
+
+
+}
