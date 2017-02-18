@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../bower_components/material-design-icons-font/iconfont/material-icons.css">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="../bower_components/angular-material-icons/angular-material-icons.css"/>
+    <link rel="stylesheet" href="../bower_components/swiper/swiper.css"/>
+
+    <style>
+        .aaa {
+            width: 100%;
+            height: 200px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+<div class="aaa">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-click="clickThis(1)">Slide 1</div>
+        <div class="swiper-slide" ng-click="clickThis(2)">Slide 2</div>
+        <div class="swiper-slide" ng-click="clickThis(3)">Slide 3</div>
+        <div class="swiper-slide" ng-click="clickThis(4)">Slide 4</div>
+        <div class="swiper-slide" ng-click="clickThis(5)">Slide 5</div>
+        <div class="swiper-slide" ng-click="clickThis(6)">Slide 6</div>
+        <div class="swiper-slide" ng-click="clickThis(7)">Slide 7</div>
+        <div class="swiper-slide" ng-click="clickThis(8)">Slide 8</div>
+        <div class="swiper-slide" ng-click="clickThis(9)">Slide 9</div>
+        <div class="swiper-slide" ng-click="clickThis(11)">Slide 10</div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div>
+<p>{{num1}}</p>
+</body>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="../bower_components/angular-material/angular-material.min.js"></script>
+<script src="../bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="../bower_components/svg-morpheus/compile/minified/svg-morpheus.js"></script>
+<script src="../bower_components/swiper/swiper.js"></script>
+
+<script>
+    (function () {
+
+        var app = angular.module('myApp', []);
+        app.controller('myController', function ($scope) {
+            var swiper = new Swiper('.aaa', {
+                pagination: '.swiper-pagination',
+                slidesPerView: 3,
+                paginationClickable: true,
+                spaceBetween: 30,
+                scrollbar: '.swiper-scrollbar',
+                prevButton: '.swiper-button-prev',
+                nextButton: '.swiper-button-next',
+                freeMode: true,
+
+            });
+            $scope.num1 = 0;
+            $scope.clickThis = function (num) {
+                $scope.num1 = num;
+                console.log(num);
+            };
+        });
+
+    })();
+
+</script>
+</html>
