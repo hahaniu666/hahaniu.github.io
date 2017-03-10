@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <title>loadJS</title>
+    <script type="text/javascript">
+        var loadJS = function (params) {
+            var head = document.getElementsByTagName("head")[0];
+
+            var script = document.createElement('script');
+
+            script.onload = script.onreadystatechange = script.onerror = function () {
+                if (script && script.readyState && /^(?!(?:loaded|complete)$)/.test(script.readyState)) return;
+
+                script.onload = script.onreadystatechange = script.onerror = null;
+                script.src = '';
+                script.parentNode.removeChild(script);
+                script = null;
+
+                params.callback();
+            };
+
+            script.charset = params.charset || document.charset || document.characterSet || 'gb2312';
+            script.src = params.src;
+
+            try {
+                head.appendChild(script);
+            } catch (exp) {
+            }
+        };
+
+
+        var callback = function () {
+            var ms = ('undefined' != typeof CarInfo ? CarInfo[0].name : '');
+            document.body.innerHTML += ms;
+        };
+
+        window.onload = function () {
+            loadJS({
+                src: 'http://price.bitauto.com/InputDealHandle.ashx?keyWord=1&temp=' + new Date().getTime(),
+                charset: 'utf-8',
+                callback: callback
+            });
+            loadJS({
+                src: 'http://price.bitauto.com/InputDealHandle.ashx?keyWord=2&temp=' + new Date().getTime(),
+                charset: 'utf-8',
+                callback: callback
+            });
+            loadJS({
+                src: 'http://price.bitauto.com/InputDealHandle.ashx?keyWord=3&temp=' + new Date().getTime(),
+                charset: 'utf-8',
+                callback: callback
+            });
+        };
+    </script>
+</head>
+<body>
+loadJS
+</body>
+</html>

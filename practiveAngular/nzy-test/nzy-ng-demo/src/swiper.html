@@ -23,11 +23,11 @@
             text-align: center;
             font-size: 18px;
             background: #fff;
-
             display: -webkit-box;
             display: -ms-flexbox;
             display: -webkit-flex;
             display: flex;
+            width: 50px;
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             -webkit-justify-content: center;
@@ -78,17 +78,20 @@
 
         var app = angular.module('myApp', []);
         app.controller('myController', function ($scope) {
-            var swiper = new Swiper('.aaa', {
-                pagination: '.swiper-pagination',
-                slidesPerView: 3,
-                paginationClickable: true,
-                spaceBetween: 30,
-                scrollbar: '.swiper-scrollbar',
-                prevButton: '.swiper-button-prev',
-                nextButton: '.swiper-button-next',
-                freeMode: true,
-
-            });
+            /*  var swiper = new Swiper('.aaa', {
+             pagination: '.swiper-pagination',
+             slidesPerView: 3,
+             paginationClickable: true,
+             spaceBetween: 30,
+             scrollbar: '.swiper-scrollbar',
+             prevButton: '.swiper-button-prev',
+             nextButton: '.swiper-button-next',
+             slideToClickedSlide: true,
+             });*/
+            var mySwiper = new Swiper('.aaa', {
+                slidesPerView: 'auto',
+                slideToClickedSlide: true,
+            })
             $scope.num1 = 0;
             $scope.clickThis = function (num) {
                 $scope.num1 = num;
