@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/src/app/conf.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/brandComp/purchase/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/brandComp/purchase/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-ng-demo/src/app.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-ng-demo/src/lottery.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-ng-demo/src/md-virtual-repeat.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-ng-demo/src/style.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-ng-demo/src/倒计时.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-ng-demo/src/倒计时2.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/confState.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/home/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/item/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/order/checkOrder/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/shelves/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/shelves/confState.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/wxLogin/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/controllers/main/groupOrder/group.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/controllers/main/groupOrder/groupOrderConfirm.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/controllers/main/groupOrder/groupOrderDetail.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/controllers/main/order/checkOrder.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/controllers/main/previewTemplate.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/scss/biz/_ks-group.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/scss/biz/_ks-groupOrderConfirm.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/settings-dev.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/views/main/groupOrder/group/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/views/main/groupOrder/groupOrderConfirm/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/views/main/groupOrder/groupOrderDetail/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/views/main/groupOrder/groupOrderDetail/specDialog/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/views/main/order/checkOrder/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/views/main/previewTemplate/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

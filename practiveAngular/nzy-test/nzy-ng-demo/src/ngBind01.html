@@ -1,0 +1,39 @@
+<html ng-app="textAngularTest" ng-controller="wysiwygeditor">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://textangular.com/dist/textAngular.css" type="text/css">
+
+    <title ng-bind="txt">aaaa</title>
+    <style>
+
+    </style>
+
+    <script src='../../bower_components/angular/angular.js'></script>
+</head>
+
+<body>
+<div  class="container app">
+
+    <div ng-bind="txt">AAAA</div>
+
+    <div>=={{txt}}==</div>
+    <button ng-click="changeTxt()">change</button>
+
+</div>
+<script>
+    angular.module("textAngularTest", [])
+        .controller('wysiwygeditor', ['$scope', function ($scope) {
+
+            alert(1);
+            $scope.txt = "999";
+//            $scope.changeTxt = function () {
+//                $scope.txt = "999"
+//            }
+
+
+        }]);
+</script>
+</body>
+
+</html>

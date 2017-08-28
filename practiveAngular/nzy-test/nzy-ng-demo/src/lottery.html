@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽奖游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="lottery">
+<div ng-controller="ctrl_lottery" id="lottery">
+
+    <!--step1 首页-->
+    <div id="step1">
+        <a class="start" ng-click=start()>开始</a>
+    </div>
+
+    <!--step2 抽奖列表-->
+    <div id="step2" class="hide">
+        <div ng-repeat="item in items" id="{{item.id}}" class="item" ng-class="{'active':item.status}">
+            <!--item的status为true时，添加class为active-->
+            {{item.name}}
+        </div>
+    </div>
+
+    <!--step3 显示结果页-->
+    <div id="step3" class="hide top">
+        <a href="javascript:;" ng-click="reset()" class="reset">重新开始</a>
+        <a href="javascript:;" ng-click="edit()" class="edit">修改奖品</a>
+        <button class="active">{{result}}</button>
+    </div>
+
+    <!--step4 添加修改奖品列表-->
+    <div id="step4" class="hide top">
+        <a href="javascript:;" ng-click="return()" class="reset">返回</a>
+        <form action="">
+            <input type="text" ng-model="name" required placeholder="名称">
+            <!-- <input type="text" class="btn" type="submit" value="添加"> -->
+            <a href="javascript:;" ng-click="add()">添加</a>
+        </form>
+        <ul>
+            <li ng-repeat="item in items">
+                <span>{{item.id}}</span>
+                <span class="span">{{item.name}}</span>
+                <a href="javascript:;" ng-click="del(item.id)">删除</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

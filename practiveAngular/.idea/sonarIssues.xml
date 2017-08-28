@@ -3,12 +3,102 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/a.regexp">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/nzy-test/.gitignore">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/md-autocomplete-1.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/ngBind01.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/qiniu.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/qiniuUpload.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/textAngular3.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-admin-front/html/main/src/controllers/main.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-admin-front/html/main/src/controllers/main/lottery/add.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-admin-front/html/main/src/controllers/main/tag/add.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-admin-front/html/main/src/views/main/lottery/add/index.main.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-admin-front/html/main/src/views/main/lottery/info/index.main.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-admin-front/html/main/src/views/main/lottery/list/index.main.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-admin-front/html/main/src/views/main/tag/add/index.main.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-admin-front/html/main/src/views/main/tag/list/index.main.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/conf.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/scss/_ksMain.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/company/order/orderDetail/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/config.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/work/kingsilk/qh-wap-front/html/front/src/index.html">
           <value>
             <set />
           </value>
