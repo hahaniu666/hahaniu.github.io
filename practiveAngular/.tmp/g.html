@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="myApp">
+<head>
+    <title>test directive</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/angular@1.6.6/angular.js"></script>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+<button ng-click="click()">重置</button>
+
+<test-directive action="action1"></test-directive>
+<script>
+    angular.module("myApp",[])
+        .controller("myCtrl",function($scope){
+            $scope.action1 = {name: "白衣如花"};
+
+            $scope.click = function () {
+                $scope.action1.reset();
+            }
+        })
+        .directive("testDirective",function(){
+            return {
+                restrict:"E",
+                scope: {
+                    action: "="
+                },
+                template:"<input type='text' ng-model='name' placeholder='白衣如花'>",
+                link: function (scope, elem, attrs) {
+                    scope.$watch(attrs.action, function (value) {
+                        scope.action.init();
+                    })
+                },
+                controller: function ($scope) {
+                    $scope.action.init = function () {
+                        $scope.name = $scope.action.name
+                    };
+                    $scope.action.reset = function () {
+                        $scope.name = "白衣如花"
+                    }
+                    console.log('$scope.action',$scope.action);
+                }
+            }
+        });
+</script>
+</body>
+</html>
