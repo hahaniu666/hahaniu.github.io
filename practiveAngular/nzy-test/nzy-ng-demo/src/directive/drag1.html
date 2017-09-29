@@ -1,0 +1,66 @@
+<!DOCTYPE>
+<html>
+<head>
+    <script src="https://unpkg.com/angular@1.6.6/angular.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var app = angular.module('docsTabsExample', []);
+
+            app.directive('myTabs', function () {
+                return {
+                    restrict: 'E',
+                    transclude: true,
+                    scope: {},
+                    controller: function ($scope) {
+                        var panes = $scope.panes = [];
+
+                        $scope.select = function (pane) {
+                            angular.forEach(panes, function (pane) {
+                                pane.selected = false;
+                            });
+                            pane.selected = true;
+                        };
+
+                        this.addPane = function (pane) {
+                            if (panes.length === 0) {
+                                $scope.select(pane);
+                            }
+                            panes.push(pane);
+                        };
+                    },
+                    templateUrl: 'my-tabs.html'
+                };
+            });
+
+            app.directive('myPane', function () {
+                return {
+                    // 指定必须有myTabs对象，若对象不存在则会报错，见下面的图1
+                    require: '^myTabs',  // ^ 表示将在父级的范围内查找该对象， 没有 ^ 表示在Directive内查找该对象， 若范围指定错误无法找到myTabs，js则会报错
+                    restrict: 'E',
+                    transclude: true,
+                    scope: {
+                        title: '@'
+                    },
+                    link: function (scope, element, attrs, tabsCtrl) {
+                        tabsCtrl.addPane(scope);
+                    },
+                    templateUrl: 'my-pane.html'
+                };
+            });
+        })();
+    </script>
+</head>
+<body ng-app="docsTabsExample">
+<my-tabs>
+    <my-pane title="Hello">
+        <h4>Hello</h4>
+        <p>Lorem ipsum dolor sit amet</p>
+    </my-pane>
+    <my-pane title="World">
+        <h4>World</h4>
+        <em>Mauris elementum elementum enim at suscipit.</em>
+        <p><a href ng-click="i = i + 1">counter: {{i || 0}}</a></p>
+    </my-pane>
+</my-tabs>
+</body>
+</html>

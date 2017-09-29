@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        body {
+            font: 0.875em/1 Arial;
+        }
+
+        #wrapper {
+            height: 198px;
+            width: 400px;
+            padding: 10px;
+            overflow-y: scroll;
+            border: 2px solid #0a0;
+        }
+
+        #box {
+            border: 10px solid #a00;
+            height: 200px;
+            width: 200px;
+            margin: 40px auto;
+        }
+
+        .appended-box {
+            border: 10px solid #00a;
+            height: 200px;
+            width: 200px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+
+<body>
+<div id="wrapper">
+    <i>#wrapper</i>
+    <div id="box"><i>#box</i></div>
+
+
+</div>
+<div id="span1">11</div>
+<div id="span2">22</div>
+<p>#box上边框相对#wrapper上边框距离: <span id="offset-top"></span>px</p>
+<p>#box下边框相对#wrapper下边框距离: <span id="offset-bottom"></span>px</p>
+<button type="button" id="dom-reflow">更改布局</button>
+</body>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+    $('#wrapper').bind('scroll', function () {
+        $('#offset-top').text('');
+        $('#offset-bottom').text('');
+    });
+
+    $('button#dom-reflow').click(function () {
+        $('#wrapper').append('<div class="appended-box"></div>');
+        $('.appended-box').html('<i>.appended-box</i>');
+    });
+
+    x=$("p").offset();
+    $("#span1").text(x.left);
+    $("#span2").text(x.top);
+</script>
+</html>

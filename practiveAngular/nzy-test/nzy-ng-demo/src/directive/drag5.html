@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #box {
+            width: 100px;
+            height: 100px;
+            background: black;
+            /*一定要给当前元素设置绝对定位*/
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body ng-controller="MyCtrl as vm">
+<order-list>
+    <order-list-item ng-repeat="item in vm.orderList" icon-up="glyphicon-arrow-up" icon-down="glyphicon-arrow-down"
+                     order-vaule="item.value" order-reverse="vm.orderInfo.orderReverse"
+                     order-predicate="vm.orderInfo.orderPredicate">
+        {{item.title}}
+    </order-list-item>
+</order-list>
+{{vm.orderInfo}}
+</body>
+<script src="https://unpkg.com/jquery@3.2.1/dist/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://unpkg.com/angular@1.6.6/angular.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    angular.module('MyApp', [])
+        .controller('MyCtrl', function () {
+            var vm = this;
+            //排序条件的数组
+            vm.orderList = [{
+                "title": "价格",
+                "value": "price"
+            }, {
+                "title": "数量",
+                "value": "count"
+            }]
+            //排序条件对象
+            vm.orderInfo = {
+                orderPredicate: "",//排序的值
+                orderReverse: false//正反序
+            }
+        })
+        .directive('orderList', function () {
+            return {
+                controller: function ($scope, $element, $attrs, $transclude) {
+                    var lists = [];//排序条件的列表
+                    this.getOpened = function (selectedItem) {
+                        //控制只能点击一个排序条件
+                        angular.forEach(lists, function (item, key) {
+                            if (selectedItem != item) {
+                                item.showMe = false;
+                            }
+                        });
+                    }
+                    //提供方法，在item生成的时候，将值放入lists中
+                    this.addItem = function (item) {
+                        lists.push(item);
+                    }
+                },
+                restrict: 'AE',
+                template: '<ul class="list-group" ng-transclude></ul>',
+                replace: true,
+                transclude: true,
+                link: function ($scope, iElm, iAttrs, controller) {
+                }
+            };
+        })
+        .directive('orderListItem', function () {
+            return {
+                scope: {
+                    orderVaule: '=',//即将排序数组中的排序条件
+                    orderReverse: '=',//排序条件的值
+                    orderPredicate: '=',//控制排序的正序或倒序
+                    iconUp: '@',//升序图标
+                    iconDown: '@',//降序图标
+                },
+                controller: function ($scope, $element, $attrs, $transclude) {
+                },
+                require: '?^orderList',//'^'判断是否存在父容器oederList,'?'可以避免orderList不存在的时候不报错
+                restrict: 'AE',
+                template: '<li class="list-group-item" ng-click="toogle(orderVaule)">' +
+                '<span ng-transclude></span>' +
+                '<i ng-show="showMe" class="glyphicon pull-right" ng-class="{true:\'{{iconUp}}\',false:\'{{iconDown}}\'}[orderReverse]"></i>' +
+                '</li>',
+                transclude: true,
+                link: function ($scope, iElm, iAttrs, controller) {
+                    //item渲染刚开始所有的图标都不显示
+                    $scope.showMe = false;
+                    //讲渲染的item加入父容器的lists中
+                    controller.addItem($scope);
+                    //点击item事件
+                    $scope.toogle = function (value) {
+                        //正反序切换
+                        $scope.orderReverse = !$scope.orderReverse;
+                        //将值赋予排序条件
+                        $scope.orderPredicate = value;
+                        //并显示图标
+                        $scope.showMe = true;
+                        //关闭其他item的图标
+                        controller.getOpened($scope);
+                    }
+                }
+            };
+        })
+</script>
+</html>

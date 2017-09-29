@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="myApp">
+<head>
+    <title>test directive</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/angular@1.6.6/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', ['$scope', function ($scope) {
+            $scope.str = "aa\"a"
+        }]);
+        app.directive('myDirective', function () {
+            function link(scope, element, attr) {
+
+            }
+
+            return {
+                restrict: 'AEC',
+                template: '' +
+                '<span> {{opts}} - {{opts.attr}} </span>',
+                // templateUrl:"a.html",
+                scope: {
+                    'opts': "="
+                },
+                replace: true,
+                transclude: true,
+                controller: testDirective,
+                link: link
+            };
+        });
+        testDirective.$inject = ["$scope"];
+        function testDirective($scope) {
+            console.log('$scope.action', $scope.opts);
+        }
+        var json = {attr: "aa\"a"};  // '{"attr":"aa\"a"}'
+    </script>
+</head>
+<body>
+<div ng-controller="myCtrl">
+    <div>100
+        <div my-directive opts="str"></div>
+        200
+    </div>
+    <div>101
+        <div my-directive opts="&quot;aaa&quot;"></div>
+        201
+    </div>
+    <div>101
+        <div my-directive opts="&quot;aa\&quot;a&quot;"></div>
+        201
+    </div>
+    <div>101
+        <div my-directive opts="{&quot;attr&quot;:&quot;aa\&quot;a&quot;}"></div>
+        201
+    </div>
+
+    <div my-directive
+            opts="{'students':[{'name':'Jack','sex':'Male'},{'name':'Alice','sex':'Female11111111111111111'}]}"></div>
+
+
+    <div my-directive
+            opts="{'students':[{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'},{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'},{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'},{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'}]}"></div>
+</div>
+</body>
+</html>

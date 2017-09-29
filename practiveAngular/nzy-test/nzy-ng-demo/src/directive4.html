@@ -16,8 +16,7 @@
 <body ng-app="myApp" ng-controller="myController">
 <div class="item">
     <my-root-tag item="items">
-        <my-child-tag ng-model="extraItem"></my-child-tag>
-
+        <!--<my-child-tag ng-model="extraItem"></my-child-tag>-->
         <div>aaaaaaaaaaa</div>
 
     </my-root-tag>
@@ -31,7 +30,8 @@
     app.controller('myController', function ($scope, $sce) {
         $scope.$sce = $sce;
 
-        $scope.items = [{
+        $scope.items = [
+            {
             name: "枕头1",
             price: 101,
             img: "http://www.baidu.com/xxx.png",
@@ -40,19 +40,19 @@
             name: "枕头1",
             price: 102,
             img: "http://www.baidu.com/xxx.png",
-            description: "好枕头2，<span  style='color:red;' onclick='alert(111)'>低价卖</span>, 快来买"
+            description: "好枕头2，<span  style='color:red;' onclick='alert(222)'>低价卖</span>, 快来买"
         }, {
             name: "枕头1",
             price: 103,
             img: "http://www.baidu.com/xxx.png",
-            description: "好枕头3，<span  style='color:red;' onclick='alert(111)'>低价卖</span>, 快来买"
+            description: "好枕头3，<span  style='color:red;' >低价卖</span>, 快来买"
         }];
-        $scope.extraItem = {
-            name: "枕头x",
-            price: 102,
-            img: "http://www.baidu.com/xxx.pngx",
-            description: "好枕头xxxxx"
-        };
+//        $scope.extraItem = {
+//            name: "枕头x",
+//            price: 102,
+//            img: "http://www.baidu.com/xxx.pngx",
+//            description: "好枕头xxxxx"
+//        };
     });
     app.directive('myRootTag', function () {
         return {
@@ -78,7 +78,7 @@
             },
             templateUrl: 'child.html',
             link: function (scope, element, attrs) {
-                console.log(scope.eee);
+                console.log('scope.eee',scope);
 
             },
             controller: function ($scope, $sce) {
@@ -91,13 +91,11 @@
 <script type="text/ng-template" id="parent.html">
 
     <div class="itemClass">
-        <div ng-transclude>
-
-        </div>
-        <my-child-tag ng-repeat="a in arr" ng-model="a">
-        </my-child-tag>
-        <!-- <my-child-tag ng-repeat="a in arr" ng-model="a" ng-click="alert()">
-         </my-child-tag>-->
+       <!--<div ng-transclude></div>-->
+        <!--<my-child-tag ng-repeat="a in arr" ng-model="a">-->
+        <!--</my-child-tag>-->
+         <my-child-tag ng-repeat="a in arr" ng-model="a" ng-click="alert()">
+         </my-child-tag>
     </div>
 
 </script>

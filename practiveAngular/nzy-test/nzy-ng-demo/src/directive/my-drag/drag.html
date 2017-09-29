@@ -1,0 +1,49 @@
+<!DocType html>
+<html data-ng-app="myApp">
+<head>
+    <title>angularjs 和拖拽事件的结合</title>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/angular@1.6.6/angular.js"></script>
+    <script type="text/javascript" src="dragdirective.js"></script>
+    <script type="text/javascript" src="mydrag.js"></script>
+    <style type="text/css">
+        .mydemo > div {
+            display: inline-block;
+        }
+
+        .mydemo > div > div {
+            width: 150px;
+            height: 100px;
+            border: 1px dotted grey;
+            display: inline-block;
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+    <script>
+        angular.module("myApp").controller("myDragController", myDragController);
+        function myDragController($scope) {
+            $scope.dragstart = function (e) {
+                e.dataTransfer.setData("Text", e.target.id);
+            };
+            $scope.dragover = function (e) {
+                e.preventDefault();
+            };
+            $scope.drop = function (e) {
+                e.preventDefault();
+                var data = e.dataTransfer.getData("Text");
+                e.target.appendChild(document.getElementById(data));
+            };
+        }
+        myDragController.$inject = ['$scope'];
+    </script>
+</head>
+<body data-ng-controller="myDragController as vm" class="mydemo">
+<div>
+    <div ruby-drop="vm.drop(event)" ruby-dragover="vm.dragover(event)">
+        <img src="https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71" width="100" draggable="true" ruby-dragstart="dragstart(event)" id="imgId" />
+    </div>
+    <div ruby-drop="vm.drop(event)" ruby-dragover="vm.dragover(event)"></div>
+</div>
+</body>
+</html>
