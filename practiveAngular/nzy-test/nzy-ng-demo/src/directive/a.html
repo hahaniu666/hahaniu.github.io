@@ -9,7 +9,25 @@
     <script>
         var app = angular.module('myApp', []);
         app.controller('myCtrl', ['$scope', function ($scope) {
-            $scope.str = "aa\"a"
+            $scope.str = "aa\"a";
+
+
+            $scope.data = [
+                {
+                    divName: 'my-directive',
+
+                    str:{
+                        color: 'red',
+                    }
+                },
+                {
+                    divName: 'my-directive',
+
+                    str:{
+                        color: 'green'
+                    }
+                }
+            ]
         }]);
         app.directive('myDirective', function () {
             function link(scope, element, attr) {
@@ -43,6 +61,17 @@
         <div my-directive opts="str"></div>
         200
     </div>
+    111
+    <div>111111111111111
+        <br>
+        <div class="my-directive" opts="str"></div>
+        2123
+        <div ng-repeat="aaa in data">
+            <div class="{{aaa.divName}}" opts="{{aaa.str}}"></div>
+        </div>
+        22222222222222222
+    </div>
+    222
     <div>101
         <div my-directive opts="&quot;aaa&quot;"></div>
         201
@@ -57,11 +86,11 @@
     </div>
 
     <div my-directive
-            opts="{'students':[{'name':'Jack','sex':'Male'},{'name':'Alice','sex':'Female11111111111111111'}]}"></div>
+         opts="{'students':[{'name':'Jack','sex':'Male'},{'name':'Alice','sex':'Female11111111111111111'}]}"></div>
 
 
     <div my-directive
-            opts="{'students':[{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'},{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'},{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'},{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'}]}"></div>
+         opts="{'students':[{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'},{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'},{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'},{'img':'https://img.kingsilk.net/c8b177c3a71ee6818abe41e7e4251a71','title':'体贴我看','dis':'2323'}]}"></div>
 </div>
 </body>
 </html>

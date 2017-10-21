@@ -8,7 +8,537 @@
             <set />
           </value>
         </entry>
+        <entry key="/data0/conf/soft/nginx/dev.tpl/conf/conf.d/kingsilk.net/kingsilk.net.conf">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/conf/soft/nginx/dev/conf/conf.d/kingsilk.net/kingsilk.net.conf">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/src/app/conf.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/webpack.config.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/bower.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/gulpfile.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/gulpfile.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/controllers/main/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/controllers/main/testTemplate.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/banner.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/dailyActive.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/guessLike.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/imgAds.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/itemList.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/ks-header.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/lineBlank.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/navBar.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/searchItem.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/shortcutIcon.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/studentInfo.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/directives/wxFocus.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/scss/biz/_ks-testTemplate.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/scss/directive/_ks-wxFocus.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/scss/index.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/settings-dev.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/views/directive/banner/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/views/directive/ks-header/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/views/directive/searchItem/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/views/directive/studentInfo/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/views/directive/wxFocus/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/html/main/src/views/main/testTemplate/index.main.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/lib/lib-min-170feb446d.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/lib/lib-min-19c04d2a1a.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/lib/lib.less">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/lib/swiper/js/swiper.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/target/dist/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/target/dist/lib/angular-swiper/angular-swiper.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/target/dist/lib/lib-min-0db7d5bcd3.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/target/dist/lib/lib-min-7e77ebe8dc.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-admin-front/target/dist/lib/lib-min-8cf8866fc5.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/bower.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/gulpfile.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/controllers/main/viewDirective.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/directives/banner.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/directives/myDirective.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/directives/navBar.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/directives/shortcutIcon.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/directives/studentInfo.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/directives/testDirective.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/directives/wxFocus.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/less/qh.less">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/scss/biz/_ks-vip.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/scss/directive/_ks-banner.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/scss/directive/_ks-wxFocus.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/scss/index.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/services/wxService.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/views/directive/banner/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/views/directive/shoctcutIcon/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/views/directive/studentInfo/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/views/directive/testDirective/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/views/directive/wxFocus/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/views/main/indexTemplate/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/views/main/viewDirective/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-mall/qh-wap-front/html/front/src/views/main/vip/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-pay/qh-pay-wap-front/src/app/conf.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-pay/qh-pay-wap-front/src/app/states/main/receive/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-pay/qh-pay-wap-front/webpack.config.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-tmp/my-ng-material/src/swiper-contener.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angular-dragdrop/demo/dnd-shoppingcart.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angulr/index.min.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angulr/js/app/calendar/calendar.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angulr/js/app/weather/ctrl.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angulr/js/app/weather/skycons.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angulr/js/main.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angulr/l10n/en.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.tmp/a.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.tmp/b.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.tmp/c.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.tmp/e.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.tmp/f.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.tmp/g.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/nzy-test/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/a.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/aaa.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/copy.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/drag.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/drag1.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/drag3.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/drag4.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/drag5.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/drag6.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/dropSortable/aa.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/dropSortable/app.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/dropSortable/css.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/dropSortable/sort.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/e.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/my-drag/drag.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/my-drag/dragdirective.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/my-drag/mydrag.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/my-tabs/my-pane.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/my-tabs/my-tabs.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/sortable.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/template.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/ui-sortanle/drag6.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/ui-sortanle/sortAble1.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive4.html">
           <value>
             <set />
           </value>

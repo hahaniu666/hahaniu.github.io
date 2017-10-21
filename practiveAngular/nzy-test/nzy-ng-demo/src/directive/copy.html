@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="myApp">
+<head>
+    <title>test directive</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/angular@1.6.6/angular.js"></script>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+<form novalidate class="simple-form">
+    Name: <input type="text" ng-model="user.name"/><br/>
+    E-mail: <input type="email" ng-model="user.email"/><br/>
+    Gender:
+    <input type="radio" ng-model="user.gender" value="male"/>
+    male
+    <input type="radio" ng-model="user.gender" value="female"/>
+    female
+    <br/>
+    <button ng-click="reset()">RESET</button>
+    <button ng-click="update(user)">SAVE</button>
+</form>
+<pre>form = {{user | json}}</pre>
+<pre>master = {{master | json}}</pre>
+<script>
+    angular.module("myApp", [])
+        .controller("myCtrl", function ($scope) {
+            $scope.master = {};
+
+            var test1;
+            console.log(angular.copy(test1));//undefined
+            var test3 = null;
+            console.log(angular.copy(test2));//undefined
+
+            var test2 = "a";
+            // console.log(angular.copy(test2,test2));//error!!
+
+            $scope.update = function (user) {
+                // Example with 1 argument
+                $scope.master = angular.copy(user);
+            };
+
+            $scope.reset = function () {
+                // Example with 2 arguments
+                angular.copy($scope.master, $scope.user);
+                console.log($scope.master);
+                console.log($scope.user);
+            };
+
+            $scope.reset();
+        })
+</script>
+</body>
+</html>
