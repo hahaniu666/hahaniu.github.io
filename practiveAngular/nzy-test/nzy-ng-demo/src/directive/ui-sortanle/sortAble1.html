@@ -30,7 +30,7 @@
 <div ng-controller="sortCtrl">
 
     <ul ui-sortable="sortableOptions" ng-model="data">
-        <li ng-repeat="item in data">
+        <li ng-repeat="item in data ">
             <span>{{item.name}}, {{item.age}}</span>
         </li>
 
@@ -76,11 +76,11 @@
                     console.log(111);
                 },
 //                items: "li:not(.not-sortable)",
-                axis: 'y'
+//                axis: 'x'
             }
             var dataWatcher = $scope.$watchCollection("data", function () {
                 console.log("watcher")
-//                $scope.data = orderByFilter($scope.data, ["age"]);
+                $scope.data = orderByFilter($scope.data, ["age"]);
                 //销毁监听器
                 dataWatcher();
             })

@@ -22,14 +22,14 @@
                 },
                 template:"<input type='text' ng-model='name' placeholder='白衣如花'>",
                 link: function (scope, elem, attrs) {
-//                    scope.$watch(attrs.action, function (value) {
-//                        scope.action.init();
-//                    })
+                    scope.$watch(attrs.action, function (value) {
+                        scope.action.init();
+                    })
                 },
                 controller: function ($scope) {
-//                    $scope.action.init = function () {
-////                        $scope.name = $scope.action.name
-//                    };
+                    $scope.action.init = function () {
+//                        $scope.name = $scope.action.name
+                    };
                     console.log('$scope.action',$scope.action);
                 }
             }

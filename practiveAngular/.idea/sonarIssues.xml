@@ -13,12 +13,247 @@
             <set />
           </value>
         </entry>
+        <entry key="/data0/conf/soft/nginx/dev/conf/conf.d/192.168.0.63/192.168.0.63.conf">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/data0/conf/soft/nginx/dev/conf/conf.d/kingsilk.net/kingsilk.net.conf">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/build/qh-activity-admin-front/report.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/package.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/conf.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/global/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/libs.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/services/loginService/loginServiceFactory.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/home/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/creatVote/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/creatVote/css.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/creatVote/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/creatVote/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/recordVote/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/recordVote/confState.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/recordVote/css.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/recordVote/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/vote/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/vote/css.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/vote/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/worksList/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/worksList/css.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/marketing/worksList/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/states/main/brandApp/publicNumber/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/thirdJs/jqueryui-timepicker-addon/dist/jquery-ui-sliderAccess.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/app/thirdJs/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/src/main/dist/.gitkeep">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-admin-front/webpack.config.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/qh-activity-wap-front/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-activity/settings.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/conf.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/editor1/kindeditor-all.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/global/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/states/main/brandApp/home/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/states/main/brandApp/home/default.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/states/main/brandApp/home/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/states/main/brandApp/home/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/thirdJs/froala/angular-froala.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/thirdJs/froala/font/font.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/src/app/thirdJs/froala/froala-sanitize.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-admin-front/webpack.config.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/src/app/conf.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/src/app/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/brandApp/order/checkOrder/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/brandApp/wallet/assets/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-agency/qh-agency-wap-front/src/app/states/main/brandApp/wallet/withdraw/Controller.js">
           <value>
             <set />
           </value>
@@ -343,7 +578,137 @@
             <set />
           </value>
         </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-pay/qh-pay-wap-front/src/app/states/main/receive/confState.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-pay/qh-pay-wap-front/src/app/states/main/receive/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-pay/qh-pay-wap-front/webpack.config.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/conf.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/confState.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/bindPhone/confState.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/bindPhone/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/brandApp/home/Controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/brandApp/home/confState.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/brandApp/home/css.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/brandApp/home/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/brandApp/home/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/brandApp/store/itemManage/itemAdd/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/brandApp/store/itemManage/itemMan/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/brandApp/store/itemManage/itemStock/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/brandApp/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/confState.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/css.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/index.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/index.root.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/loginTime/confState.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/src/app/states/main/loginTime/view.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/data0/work/git-repo/gitlab/kingsilk/qh-shop/qh-shop-wap-front/webpack.config.js">
           <value>
             <set />
           </value>
@@ -353,7 +718,57 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../123/css/main.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../123/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../123/js/jquery-ui-slide.min.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../123/layDay/layDate-v5.0.7/test.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../123/qwe/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../123/qwe/media.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../QWE/123/html/typing/shortcuts.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../angular-dragdrop/demo/dnd-shoppingcart.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angular-froala/demo/app.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angular-froala/demo/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../angular-froala/src/froala-sanitize.js">
           <value>
             <set />
           </value>
@@ -384,6 +799,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../angulr/l10n/en.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../btpka3.github.com/js/angular/my-angular-webpack/.myStates.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../btpka3.github.com/js/angular/my-angular-webpack/build/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../btpka3.github.com/js/angular/my-angular-webpack/src/app/pages/aaa/index.main.html">
           <value>
             <set />
           </value>
@@ -493,6 +923,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/g.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/my-drag/drag.html">
           <value>
             <set />
@@ -528,7 +963,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/ui-sortanle/dateTimePicker.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/ui-sortanle/drag6.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/ui-sortanle/jquery-1.7.2.min.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/ui-sortanle/jquery-ui-timepicker-addon.js">
           <value>
             <set />
           </value>
@@ -538,7 +988,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive/ui-sortanle/sortable.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/directive4.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/editor/1.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/editor1/1.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/editor1/default.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/editor1/kindeditor-all.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/iconfont/iconfont.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/ks/directive999.html">
           <value>
             <set />
           </value>
@@ -564,6 +1049,91 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/nzy-test/nzy-ng-demo/src/textAngular3.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/editor/demo.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/node_modules/jquery-ui/package.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/node_modules/jquery/dist/jquery.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/node_modules/muiv3/examples/hello-mui/examples/actionsheet.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/node_modules/muiv3/examples/hello-mui/examples/pullrefresh_sub.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/package.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/src/angular-ui-sortable/sortAble.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/src/cssAnimate/ball.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/src/editor/demo.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/src/layIm/test.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/src/mui/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/src/mui/actionsheet.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/src/mui/pull-refres">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/src/mui/test.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../js/demo/src/testJs/testJs.html">
           <value>
             <set />
           </value>
